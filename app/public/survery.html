@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Friend Finder Survey</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
+
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h2>Survey Questions</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"><strong>About You</strong></h3>
+				</div>
+				<div class="panel-body">
+					<form method="POST" role="form" id="myForm">
+						<div class="form-group">
+							<label for="name">Name (Required)</label>
+							<input type="text" class="form-control" id="name">
+						</div>
+						<div class="form-group">
+							<label for="phoneNumber">Link to Photo (Required)</label>
+							<input type="text" class="form-control" id="phoneNumber">
+						</div>
+						<hr>
+						<h3>Question 1</h3>
+							<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+								<select class="selectpicker" id="searchType" name="searchtype" multiple list="Select and Option" onchange="this.form.submit()">
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+								
+						<h3>Question 2</h3>
+							<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 3</h3>
+							<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 4</h3>
+							<h4>You rarely do something just out of sheer curiosity.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 5</h3>
+							<h4>People can rarely upset you.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 6</h3>
+							<h4>It is often difficult for you to relate to other people’s feelings.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 7</h3>
+							<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 8</h3>
+							<h4>You rarely get carried away by fantasies and ideas.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 9</h3>
+							<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+								
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+						<h3>Question 10</h3>
+							<h4>You feel more energetic after spending time with a group of people.</h4>
+								<select class="form-control" id="q1" placeholder="Select an Option">
+									
+									<option value="1">1 (Strongly Disagree)</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5 (Strongly Agree)</option>
+								</select>
+							<br>
+							<br>
+						<button type="submit" class="btn btn-primary" id="add-btn"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Submit</button>
+					</form>
+				</div>	
+
+			</div>
+
+		</div>
+
+		<a href="">API Friend List&nbsp;</a>|<a href="">&nbsp;GitHub Repo</a>
+	</div>
+</div>
+
+	<!-- Latest jquery CDN -->
+	<script
+  	src="https://code.jquery.com/jquery-3.2.1.js"
+ 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  	crossorigin="anonymous"></script>
+
+  	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+	
+
+
+	<script>
+	 $('.selectpicker').selectpicker({
+          style: 'btn-default',
+          size: 4
+      });
+	</script>	
+
+</body>
+</html>
