@@ -5,13 +5,27 @@
 	<title>Friend Finder Survey</title>
 
 	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+  	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+
+	<script
+  	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"\
+  	crossorigin="anonymous"></script>
+
+	<script src="https://silviomoreto.github.io/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+	
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
 <body>
+
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
@@ -32,13 +46,14 @@
 							<input type="text" class="form-control" id="name">
 						</div>
 						<div class="form-group">
-							<label for="phoneNumber">Link to Photo (Required)</label>
-							<input type="text" class="form-control" id="phoneNumber">
+							<label for="photoLink">Link to Photo (Required)</label>
+							<input type="text" class="form-control" id="photoLink">
 						</div>
+
 						<hr>
 						<h3>Question 1</h3>
 							<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-								<select class="selectpicker" id="searchType" name="searchtype" multiple list="Select and Option" onchange="this.form.submit()">
+								<select class="selectpicker" title="Select an Option" id="q1">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -48,8 +63,7 @@
 								
 						<h3>Question 2</h3>
 							<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q2">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -58,8 +72,7 @@
 								</select>
 						<h3>Question 3</h3>
 							<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q3">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -68,8 +81,7 @@
 								</select>
 						<h3>Question 4</h3>
 							<h4>You rarely do something just out of sheer curiosity.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q4">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -78,8 +90,7 @@
 								</select>
 						<h3>Question 5</h3>
 							<h4>People can rarely upset you.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q5">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -88,8 +99,7 @@
 								</select>
 						<h3>Question 6</h3>
 							<h4>It is often difficult for you to relate to other people’s feelings.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q6">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -98,8 +108,7 @@
 								</select>
 						<h3>Question 7</h3>
 							<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q7">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -108,8 +117,7 @@
 								</select>
 						<h3>Question 8</h3>
 							<h4>You rarely get carried away by fantasies and ideas.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q8">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -118,8 +126,7 @@
 								</select>
 						<h3>Question 9</h3>
 							<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-								
+								<select class="selectpicker" title="Select an Option" id="q9">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -128,8 +135,7 @@
 								</select>
 						<h3>Question 10</h3>
 							<h4>You feel more energetic after spending time with a group of people.</h4>
-								<select class="form-control" id="q1" placeholder="Select an Option">
-									
+								<select class="selectpicker" title="Select an Option" id="q10">
 									<option value="1">1 (Strongly Disagree)</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -149,23 +155,50 @@
 		<a href="">API Friend List&nbsp;</a>|<a href="">&nbsp;GitHub Repo</a>
 	</div>
 </div>
-
-	<!-- Latest jquery CDN -->
-	<script
-  	src="https://code.jquery.com/jquery-3.2.1.js"
- 	integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  	crossorigin="anonymous"></script>
-
-  	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+	
 	
 
+<!-- Script======================================================== -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
 
 	<script>
-	 $('.selectpicker').selectpicker({
-          style: 'btn-default',
-          size: 4
-      });
+	// allows you to edit select-picker (not in use)
+	$(document).ready(function(){
+
+	// create an object with the data submited
+	$("#add-btn").on("click", function(event) {
+		event.preventDefault();
+		var newFriend = {
+			name: $("#name").val().trim(),
+			photoLink: $("#photoLink").val().trim(),
+			q1: $("#q1").val().trim(),
+			q2: $("#q2").val().trim(),
+			q3: $("#q3").val().trim(),
+			q4: $("#q4").val().trim(),
+			q5: $("#q5").val().trim(),
+			q6: $("#q6").val().trim(),
+			q7: $("#q7").val().trim(),
+			q8: $("#q8").val().trim(),
+			q9: $("#q9").val().trim(),
+			q10: $("#q10").val().trim(),
+		};
+
+		// Send data to the server
+		$.post("/api/reserve", newFriend)
+		.done(function(data) {
+			console.log(data);
+			alert("We are calculating your perfect friend match...");
+		});
+		$("#myForm").reset();
+
+
+	});
+
+
+	
+});	 
 	</script>	
 
 </body>
