@@ -1,58 +1,47 @@
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
+  // allows you to edit select-picker (not in use)
+  $(document).ready(function(){
 
-var app = express();
-var PORT = 3000;
+  // create an object with the data submited
+  $("#add-btn").on("click", function(event) {
+    event.preventDefault();
+    var newFriend = {
+      name: $("#name").val().trim(),
+      photoLink: $("#photoLink").val().trim(),
+      q1: $("#q1").val().trim(),
+      q2: $("#q2").val().trim(),
+      q3: $("#q3").val().trim(),
+      q4: $("#q4").val().trim(),
+      q5: $("#q5").val().trim(),
+      q6: $("#q6").val().trim(),
+      q7: $("#q7").val().trim(),
+      q8: $("#q8").val().trim(),
+      q9: $("#q9").val().trim(),
+      q10: $("#q10").val().trim(),
+    };
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.text());
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-
-var data = [{
-  name: "Janna",
-  photoLink: "https://www.google.com/search?q=image&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjMsavx3frTAhXkxlQKHUWoBJgQ_AUICigB&biw=893&bih=503#imgrc=lAHthDF3S1ACoM:",
-  q1: 1,
-  q2: 2,
-  q3: 2,
-  q4: 2,
-  q5: 2,
-  q6: 2,
-  q7: 2,
-  q8: 2,
-  q9: 2,
-  q10: 2
-}];
-
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "home.html"));
-});
-
-app.get("/survey", function(req, res) {
-  res.sendFile(path.join(__dirname, "survey.html"));
-});
+    // Send data to the server
+    $.post("/api/survey", newFriend)
+    .done(function(data) {
+      console.log(data);
+      alert("We are calculating your perfect friend match...");
+    });
+    $("#myForm").reset();
 
 
-app.post("/api/survey", function(req, res) {
-  data.push(req.body);
-  console.log(data);
-
-  res.json({
-    complete: true
   });
-});
+  $.get("/api", function(data) {
+        for (var i = 0; i < data.length; i++) {
+        var wellSection = $("<div>");
+        wellSection.addClass("well");
+        wellSection.attr("id", "character-well-" + i);
+        $("#well-section").append(wellSection);
 
-app.get("/api/friendList", function(req, res) {
-  var friends = [];
-  for(var i = 0; i < 5 && i < data.length; i++)
-  {
-    friends.push(data[i]);
-  }
-  return res.json(friends);
-});
+        $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
+        $("#character-well-" + i).append("<img>: " + data[i].photoLink);
+        // $("#character-well-" + i).append("<h3>Age: " + data[i].age + "</h4>");
+        // $("#character-well-" + i).append("<h3>Force Points: " + data[i].forcePoints + "</h4>");
+      }
+    });
 
-
-app.listen(PORT, function() {
-  console.log("Server listening on port " + PORT);
-});
+  
+});  
