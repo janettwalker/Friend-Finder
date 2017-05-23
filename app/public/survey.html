@@ -164,7 +164,7 @@
 
 		</div>
 
-		<a href="">API Friend List&nbsp;</a>|<a href="">&nbsp;GitHub Repo</a>
+		<a href="/api" target="blank">API Friend List&nbsp;</a>|<a href="https://github.com/janettwalker/Friend-Finder" target="blank">&nbsp;GitHub Repo</a>
 	</div>
 	  <!-- Modal -->
   	<div class="modal fade" id="myModal" role="dialog">
@@ -177,8 +177,8 @@
           			<h4 class="modal-title">Best Match</h4>
         		</div>
         		<div class="modal-body">
-          			<p id="name"></p>
-          			<p id="img"></p>
+          			<div id="name"></div>
+          			<div id="img"></div>
         		</div>
         		<div class="modal-footer">
           			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -235,8 +235,8 @@
         // var wellSection = $("<div>");
         // wellSection.addClass("well");
         // wellSection.attr("id", "character-well-" + i);
-        $("#name" + i).append("<h3>" + data[i].name + "</h3>");
-        $("#img" + i).append("<img>" + data[i].photoLink);
+        $("#name").append("<h3>" + data[i].name + "</h3>");
+        $("#img").append("<img src=>" + data[i].photoLink + "/>");
 
         // $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
         // $("#character-well-" + i).append("<img>: " + data[i].photoLink);
