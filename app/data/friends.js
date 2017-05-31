@@ -1,47 +1,68 @@
-  // allows you to edit select-picker (not in use)
-  $(document).ready(function(){
 
-  // create an object with the data submited
-  $("#add-btn").on("click", function(event) {
-    event.preventDefault();
-    var newFriend = {
-      name: $("#name").val().trim(),
-      photoLink: $("#photoLink").val().trim(),
-      q1: $("#q1").val().trim(),
-      q2: $("#q2").val().trim(),
-      q3: $("#q3").val().trim(),
-      q4: $("#q4").val().trim(),
-      q5: $("#q5").val().trim(),
-      q6: $("#q6").val().trim(),
-      q7: $("#q7").val().trim(),
-      q8: $("#q8").val().trim(),
-      q9: $("#q9").val().trim(),
-      q10: $("#q10").val().trim(),
-    };
+  var data = [
+  {
+  name: "Janna",
+  photoLink: "https://unsplash.com/search/portrait?photo=o1PKM7-8AH4",
+  q1: 1,
+  q2: 2,
+  q3: 4,
+  q4: 5,
+  q5: 5,
+  q6: 1,
+  q7: 3,
+  q8: 4,
+  q9: 5,
+  q10: 1
+},
 
-    // Send data to the server
-    $.post("/api/survey", newFriend)
-    .done(function(data) {
-      console.log(data);
-      alert("We are calculating your perfect friend match...");
-    });
-    $("#myForm").reset();
+  {
+  name: "Christoph",
+  photoLink: "https://unsplash.com/search/portrait?photo=Q7r-IezW1BU",
+  q1: 3,
+  q2: 4,
+  q3: 4,
+  q4: 2,
+  q5: 5,
+  q6: 2,
+  q7: 3,
+  q8: 4,
+  q9: 5,
+  q10: 5
+},
+
+  {
+  name: "Helen",
+  photoLink: "https://unsplash.com/search/portrait?photo=brCVPmnWjj4",
+  q1: 5,
+  q2: 2,
+  q3: 2,
+  q4: 3,
+  q5: 4,
+  q6: 5,
+  q7: 3,
+  q8: 2,
+  q9: 2,
+  q10: 5
+},
+
+  {
+  name: "Steve",
+  photoLink: "https://unsplash.com/search/portrait?photo=NAIdtWsGmOk",
+  q1: 5,
+  q2: 5,
+  q3: 5,
+  q4: 5,
+  q5: 5,
+  q6: 5,
+  q7: 5,
+  q8: 5,
+  q9: 5,
+  q10: 5
+}
 
 
-  });
-  $.get("/api", function(data) {
-        for (var i = 0; i < data.length; i++) {
-        var wellSection = $("<div>");
-        wellSection.addClass("well");
-        wellSection.attr("id", "character-well-" + i);
-        $("#well-section").append(wellSection);
+];
 
-        $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
-        $("#character-well-" + i).append("<img>: " + data[i].photoLink);
-        // $("#character-well-" + i).append("<h3>Age: " + data[i].age + "</h4>");
-        // $("#character-well-" + i).append("<h3>Force Points: " + data[i].forcePoints + "</h4>");
-      }
-    });
 
   
-});  
+

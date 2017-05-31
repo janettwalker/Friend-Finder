@@ -1,12 +1,9 @@
-// Dependencies
-var express = require("express");
-var path = require("path");
-var bodyParser = require("body-parser");
+var friends = require("../data/friends");
 
-// 
-var ApiRoutes = function(){
-app.post("/api/survey", function(req, res) {
-  data.push(req.body);
+module.exports = function(app) {
+
+app.post("/api/friendList", function(req, res) {
+  res.json(friends);
   console.log(data);
 
   res.json({
@@ -14,9 +11,9 @@ app.post("/api/survey", function(req, res) {
   });
 });
 
-app.get("/api/friendList", function(req, res) {
+app.post("/api/friendList", function(req, res) {
   var friends = [];
-  for(var i = 0; i < 5 && i < data.length; i++)
+  for(var i = 0; i < data.length; i++)
   {
     friends.push(data[i]);
   }
@@ -25,6 +22,5 @@ app.get("/api/friendList", function(req, res) {
 
 };
 
-// Export Module
-module.exports = ApiRoutes;
+
 
