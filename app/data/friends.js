@@ -1,67 +1,110 @@
-
-  var data = [
+var friends = [
   {
   name: "Janna",
-  photoLink: "https://unsplash.com/search/portrait?photo=o1PKM7-8AH4",
-  q1: 1,
-  q2: 2,
-  q3: 4,
-  q4: 5,
-  q5: 5,
-  q6: 1,
-  q7: 3,
-  q8: 4,
-  q9: 5,
-  q10: 1
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/janna_zpsxfiva1sf.jpg",
+  scores: [
+    "2",
+    "3",
+    "4",
+    "3",
+    "5",
+    "1",
+    "5",
+    "3",
+    "2",
+    "2"
+    ]
 },
 
   {
   name: "Christoph",
-  photoLink: "https://unsplash.com/search/portrait?photo=Q7r-IezW1BU",
-  q1: 3,
-  q2: 4,
-  q3: 4,
-  q4: 2,
-  q5: 5,
-  q6: 2,
-  q7: 3,
-  q8: 4,
-  q9: 5,
-  q10: 5
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/christoph_zpstzaxxjh2.jpg",
+  scores: [
+    "5",
+    "2",
+    "2",
+    "2",
+    "4",
+    "1",
+    "3",
+    "2",
+    "5",
+    "5"
+    ]
 },
 
   {
   name: "Helen",
-  photoLink: "https://unsplash.com/search/portrait?photo=brCVPmnWjj4",
-  q1: 5,
-  q2: 2,
-  q3: 2,
-  q4: 3,
-  q5: 4,
-  q6: 5,
-  q7: 3,
-  q8: 2,
-  q9: 2,
-  q10: 5
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/helen_zpsdc6kmacp.jpg",
+  scores: [
+    "4",
+    "2",
+    "5",
+    "1",
+    "3",
+    "2",
+    "2",
+    "1",
+    "3",
+    "2"
+    ]
 },
 
   {
   name: "Steve",
-  photoLink: "https://unsplash.com/search/portrait?photo=NAIdtWsGmOk",
-  q1: 5,
-  q2: 5,
-  q3: 5,
-  q4: 5,
-  q5: 5,
-  q6: 5,
-  q7: 5,
-  q8: 5,
-  q9: 5,
-  q10: 5
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/steve_zpsojhym9zt.jpg",
+  scores: [
+    "5",
+    "1",
+    "4",
+    "4",
+    "5",
+    "1",
+    "2",
+    "5",
+    "4",
+    "1"
+    ]
+},
+
+  {
+  name: "Kevin",
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/kevin_zpsml7qxtxo.jpg",
+  scores: [
+    "3",
+    "4",
+    "2",
+    "2",
+    "2",
+    "3",
+    "4",
+    "1",
+    "3",
+    "3"
+    ]
+},
+
+  {
+  name: "Rhyanne",
+  photoLink: "http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg",
+  scores: [
+    "5",
+    "2",
+    "1",
+    "1",
+    "2",
+    "3",
+    "4",
+    "1",
+    "5",
+    "3"
+    ]
 }
 
 
 ];
+
+module.exports = friends;
 
 
   

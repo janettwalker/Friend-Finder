@@ -39,18 +39,22 @@
 
 
 <div class="container">
+
 	<div class="row">
 		<div class="col-lg-12">
 			<h2>Survey Questions</h2>
 			<hr>
 		</div>
 	</div>
+
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="panel panel-default">
+
 				<div class="panel-heading">
 					<h3 class="panel-title"><strong>About You</strong></h3>
 				</div>
+
 				<div class="panel-body">
 					<form method="POST" role="form" id="myForm">
 						<div class="form-group">
@@ -156,100 +160,123 @@
 								</select>
 							<br>
 							<br>
-						<button type="submit" class="btn btn-primary" id="add-btn" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Submit</button>
-					</form>
-				</div>	
+						<!-- Submit Button -->
+    					<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"><i class="fa fa-search" aria-hidden="true"></i>&nbsp;Submit</button>
+
+    				</form>
+
+					<hr>
+					<footer class="footer">
+					    <div class="container">
+					        <p><a href="/api/friends" target="blank">API Friends List</a>&nbsp; | &nbsp;<a href="https://github.com/janettwalker/Friend-Finder" target="blank">GitHub Repo</a></p>
+					    </div>
+					</footer>
+
+				</div>
 
 			</div>
 
 		</div>
 
-		<a href="/api" target="blank">API Friend List&nbsp;</a>|<a href="https://github.com/janettwalker/Friend-Finder" target="blank">&nbsp;GitHub Repo</a>
 	</div>
-	  <!-- Modal -->
-  	<div class="modal fade" id="myModal" role="dialog">
-    	<div class="modal-dialog">
-    
-      		<!-- Modal content-->
-      		<div class="modal-content">
-       			<div class="modal-header">
-          			<button type="button" class="close" data-dismiss="modal">&times;</button>
-          			<h4 class="modal-title">Best Match</h4>
-        		</div>
-        		<div class="modal-body">
-          			<div id="name"></div>
-          			<div id="img"></div>
-        		</div>
-        		<div class="modal-footer">
-          			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        		</div>
 
-      		</div>
-      
-   		</div>
+	<!-- Modal -->
+	<div id="results-modal" class="modal fade" role="dialog">
+	    <div class="modal-dialog">
 
-  	</div>
+	      <!-- Modal content-->
+	      	<div class="modal-content">
+	        	<div class="modal-header">
+	          		<button type="button" class="close" data-dismiss="modal">&times;</button>
+	          		<h2 class="modal-title"><strong>Best Match</strong></h2>
+	        	</div>
+
+	        <div class="modal-body">
+	         	<h2 id="name"></h2>
+	          	<img id="photoLink" style="width: 500px;" src="http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg" alt="">
+	        </div>
+
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+
+	    </div>
+	    
+	</div>
 
 </div>
-	
-	
 
-<!-- Script======================================================== -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-	<script src="../app/data/friends.js"></script>
+<script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.10/dist/js/alertify.js"></script>
+<script type="text/javascript">
 
-	<script>
-  // allows you to edit select-picker (not in use)
-  $(document).ready(function(){
-
-  // create an object with the data submited
-  $("#add-btn").on("click", function(event) {
-    event.preventDefault();
-    var newFriend = {
-      name: $("#name").val(),
-      photoLink: $("#photoLink").val(),
-      q1: $("#q1").val(),
-      q2: $("#q2").val(),
-      q3: $("#q3").val(),
-      q4: $("#q4").val(),
-      q5: $("#q5").val(),
-      q6: $("#q6").val(),
-      q7: $("#q7").val(),
-      q8: $("#q8").val(),
-      q9: $("#q9").val(),
-      q10: $("#q10").val(),
+    // Chosen CSS
+    var config = {
+      ".selectpicker": {},
     };
 
-    // Send data to the server
-    $.post("/api/survey", newFriend)
-    .done(function(data) {
-      console.log(data);
-      alert("We are calculating your perfect friend match...");
-    });
-    $("#myForm").reset();
+    for (var selector in config) {
+      $(selector).selectpicker(config[selector]);
+    }
 
+    // Capture the form inputs
+    $("#submit").on("click", function(event) {
+      event.preventDefault();
 
-  });
-  $.get("/api/friendList", function(data) {
-        for (var i = 0; i < data.length; i++) {
-        // var wellSection = $("<div>");
-        // wellSection.addClass("well");
-        // wellSection.attr("id", "character-well-" + i);
-        // $("#well-section").append(wellSection);
+      // Form validation
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function() {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
 
-        $("#name").append("<h2>" + data[i].name + "</h2>");
-        $("#img").append("<img>: " + data[i].photoLink);
+        $(".selectpicker").each(function() {
+
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
       }
+
+      // If all required fields are filled
+      if (validateForm()) {
+        // Create an object for the user"s data
+        var userData = {
+          name: $("#name").val(),
+          photoLink: $("#photoLink").val(),
+          scores: [
+            $("#q1").val(),
+            $("#q2").val(),
+            $("#q3").val(),
+            $("#q4").val(),
+            $("#q5").val(),
+            $("#q6").val(),
+            $("#q7").val(),
+            $("#q8").val(),
+            $("#q9").val(),
+            $("#q10").val()
+          ]
+        };
+
+        // AJAX post the data to the friends API.
+        $.post("/api/friends", userData, function(data) {
+
+          // Grab the result from the AJAX post so that the best match's name and photo are displayed.
+          $("#name").text(data.name);
+          $("#photoLink").attr("src", data.photoLink);
+
+          // Show the modal with the best match
+          $("#results-modal").modal("toggle");
+
+        });
+      } else {
+        alertify.error("Please fill out all fields before submitting!");
+    	}
     });
-
-  
-}); 
- </script>
-
-
-
+  </script>
 
 </body>
+
 </html>
