@@ -1,0 +1,35 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "an app that allows you to find a friend that matches your personality based on a set of answered questions.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "console.table": "^0.8.0",
+    "express": "^4.15.2",
+    "inquirer": "^3.0.6",
+    "mysql": "^2.13.0",
+    "path": "^0.12.7",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janettwalker/Friend-Finder.git"
+  },
+  "keywords": [
+    "friend",
+    "finder",
+    "nodejs"
+  ],
+  "author": "Janet Walker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janettwalker/Friend-Finder/issues"
+  },
+  "homepage": "https://github.com/janettwalker/Friend-Finder#readme"
+}
