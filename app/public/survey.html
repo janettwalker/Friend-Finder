@@ -192,8 +192,8 @@
 	        	</div>
 
 	        <div class="modal-body">
-	         	<h2 id="name"></h2>
-	          	<img id="photoLink" style="width: 500px;" src="http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg" alt="">
+	         	<h2 id="match-name"></h2>
+	          	<img id="match-img" style="width: 500px;" src="http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg" alt="">
 	        </div>
 
 	        <div class="modal-footer">
@@ -264,8 +264,8 @@
         $.post("/api/friends", userData, function(data) {
 
           // Grab the result from the AJAX post so that the best match's name and photo are displayed.
-          $("#name").text(data.name);
-          $("#photoLink").attr("src", data.photoLink);
+          $("#match-name").text(data.name);
+          $("#match-img").attr("src", data.photoLink);
 
           // Show the modal with the best match
           $("#results-modal").modal("toggle");
