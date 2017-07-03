@@ -7,8 +7,8 @@
 
 	<title>Friend Finder Survey</title>
 
-	<!-- Latest compiled and minified CSS -->
-	<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+	<!-- Meyer Reset-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
@@ -33,6 +33,17 @@
 <!--   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<style>
+.match {
+	width: 500px;
+}
+@media screen and (max-width: 500px) {
+    .match {
+        width: 300px;
+    }
+}
+
+</style>
 
 </head>
 <body>
@@ -42,14 +53,14 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2>Survey Questions</h2>
+			<h2 class="text-center">Survey Questions</h2>
 			<hr>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-lg-12">
-			<div class="panel panel-default">
+			<div class="panel panel-primary">
 
 				<div class="panel-heading">
 					<h3 class="panel-title"><strong>About You</strong></h3>
@@ -193,7 +204,7 @@
 
 	        <div class="modal-body">
 	         	<h2 id="match-name"></h2>
-	          	<img id="match-img" style="width: 500px;" src="http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg" alt="">
+	          	<img id="match-img" class="text-center match" src="http://i1044.photobucket.com/albums/b447/janetwalker271989/ryanne_zpsgwxkuegz.jpg" alt="">
 	        </div>
 
 	        <div class="modal-footer">
