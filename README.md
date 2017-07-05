@@ -6,7 +6,7 @@
 
 This web application allows users to define relatability of questions on a scale from 1 (strongly disagree) to 5 (strongly agree). The users submission is compared to other submissions and matched to other users. The user's best match is then displayed.
 
-![](header.png)
+![Friend-Finder](http://i1044.photobucket.com/albums/b447/janetwalker271989/Screen%20Shot%202017-07-05%20at%202.57.19%20PM_zpsrb5m33vl.png)
 
 ## Installation
 
