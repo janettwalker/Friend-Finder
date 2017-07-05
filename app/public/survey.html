@@ -10,6 +10,8 @@
 	<!-- Meyer Reset-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
 
@@ -34,13 +36,38 @@
 
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <style>
+
+body {
+    background-color: #1A1F22;
+	}
+
+h1 {
+	font-family: 'Lobster', cursive;
+	color: white;
+	font-size: 55px;
+	}
+
 .match {
 	width: 500px;
 }
+
 @media screen and (max-width: 500px) {
     .match {
         width: 300px;
     }
+}
+
+.container {
+	padding: 30px;
+}
+
+.panel-body {
+	padding: 30px;
+}
+
+.panel-title {
+	padding: 20px;
+	font-size: 26px; 
 }
 
 </style>
@@ -53,7 +80,7 @@
 
 	<div class="row">
 		<div class="col-lg-12">
-			<h2 class="text-center">Survey Questions</h2>
+			<h1 class="text-center">Survey Questions</h1>
 			<hr>
 		</div>
 	</div>
@@ -63,22 +90,24 @@
 			<div class="panel panel-primary">
 
 				<div class="panel-heading">
-					<h3 class="panel-title"><strong>About You</strong></h3>
+					<h2 class="panel-title text-center"><strong>About You</strong></h2>
 				</div>
 
 				<div class="panel-body">
 					<form method="POST" role="form" id="myForm">
 						<div class="form-group">
-							<label for="name">Name (Required)</label>
-							<input type="text" class="form-control" id="name" required="true">
+							<h4><label for="name">Name (Required)</label>
+							<input type="text" class="form-control" id="name" required="true"></h4>
 						</div>
+						<br>
 						<div class="form-group">
-							<label for="photoLink">Link to Photo (Required)</label>
-							<input type="text" class="form-control" id="photoLink" required="true">
+							<h4><label for="photoLink">Link to Photo (Required)</label>
+							<input type="text" class="form-control" id="photoLink" required="true"></h4>
 						</div>
+						<br>
 
 						<hr>
-						<h3>Question 1</h3>
+						<h3><strong>Question 1</strong></h3>
 							<h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
 								<select class="selectpicker" title="Select an Option" id="q1">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -87,8 +116,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-								
-						<h3>Question 2</h3>
+						<hr>		
+						<h3><strong>Question 2</strong></h3>
 							<h4>Generally speaking, you rely more on your experience than your imagination.</h4>
 								<select class="selectpicker" title="Select an Option" id="q2">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -97,7 +126,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 3</h3>
+						<hr>
+						<h3><strong>Question 3</strong></h3>
 							<h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
 								<select class="selectpicker" title="Select an Option" id="q3">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -106,7 +136,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 4</h3>
+						<hr>
+						<h3><strong>Question 4</strong></h3>
 							<h4>You rarely do something just out of sheer curiosity.</h4>
 								<select class="selectpicker" title="Select an Option" id="q4">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -115,7 +146,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 5</h3>
+						<hr>
+						<h3><strong>Question 5</strong></h3>
 							<h4>People can rarely upset you.</h4>
 								<select class="selectpicker" title="Select an Option" id="q5">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -124,7 +156,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 6</h3>
+						<hr>
+						<h3><strong>Question 6</strong></h3>
 							<h4>It is often difficult for you to relate to other people’s feelings.</h4>
 								<select class="selectpicker" title="Select an Option" id="q6">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -133,7 +166,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 7</h3>
+						<hr>
+						<h3><strong>Question 7</strong></h3>
 							<h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
 								<select class="selectpicker" title="Select an Option" id="q7">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -142,7 +176,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 8</h3>
+						<hr>
+						<h3><strong>Question 8</strong></h3>
 							<h4>You rarely get carried away by fantasies and ideas.</h4>
 								<select class="selectpicker" title="Select an Option" id="q8">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -151,7 +186,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 9</h3>
+						<hr>
+						<h3><strong>Question 9</strong></h3>
 							<h4>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h4>
 								<select class="selectpicker" title="Select an Option" id="q9">
 									<option value="1">1 (Strongly Disagree)</option>
@@ -160,7 +196,8 @@
 									<option value="4">4</option>
 									<option value="5">5 (Strongly Agree)</option>
 								</select>
-						<h3>Question 10</h3>
+						<hr>
+						<h3><strong>Question 10</strong></h3>
 							<h4>You feel more energetic after spending time with a group of people.</h4>
 								<select class="selectpicker" title="Select an Option" id="q10">
 									<option value="1">1 (Strongly Disagree)</option>

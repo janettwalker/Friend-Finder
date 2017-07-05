@@ -5,22 +5,67 @@
 	<title>Friend Finder</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
 	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
+
+	<style>
+	body {
+		background-image: url("http://i1044.photobucket.com/albums/b447/janetwalker271989/andre-benz-290006_zpshuetfkdu.jpg");
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-color: #1A1F22;
+
+	}
+
+	.jumbotron {
+		margin-top: 30px;
+		background-color: white;
+		opacity: 80px;
+	}
+
+	h1 {
+		font-family: 'Lobster', cursive;
+	}
+	
+	.glyphicon-search {
+		font-size: 40px;
+	}
+
+	@media screen and (max-width: 780px) {
+    .glyphicon-search {
+        font-size: 30px;
+    }
+    h1 {
+    	font-size: 50px;
+    }
+}
+
+	.glyphicon-list-alt {
+		font-size: 20px;
+	}
+
+	</style>
 </head>
 <body>
+	<div class="container">
 		<div class="jumbotron text-center">
 			<h1><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Friend Finder</h1>
 			<hr>
-			<h2>Let us match you with a friend!</h2>
+			<h2><strong>Let us match you with a friend!</strong></h2>
 			<br>
 			<h4>Answer a few basic questions. Then find the friend with the greatest compatibility.</h4>
 			<br>
 			<br>
-			<a href="/survey"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span> Go to Survey</button></a>
+			<a href="/survey"><button type="button" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-list-alt"></span>&nbsp; Go to Survey</button></a>
 			
 		</div>
+
+	</div>
 
 	
 </body>
